@@ -1,5 +1,9 @@
 Hei.
 
+## Besvarelse
+
+Alle tester ok. Men om alle er optimalt løst kan jeg ikke garantere.
+
 ## Oppgaven
 
 Du løser den på egne vilkår da du får retting underveis.
