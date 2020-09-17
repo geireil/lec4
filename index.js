@@ -345,10 +345,20 @@ try {
 
   /// class (bonus) ///
 
-  /*
+  
 	(function UseClass() {
 		// Let Multiplier be a class with the appropriate methods to succeed.
-		let Multiplier = 'class';
+
+
+		class Multiplier{
+			constructor(multi) {
+				this.multi = multi;
+			  }
+
+			multiply(num) {
+				return num * this.multi;
+			  }
+		};
 
 		// Don't make changes below this line	
 		
@@ -358,14 +368,15 @@ try {
 		
 		solvedBonus++;
 	})();
-	*/
+	
 
   /// Template strings (bonus) ///
 
-  /*
+  
 	(function UseTemplateStrings2() {
 		// Rewrite the line below to use a template string.
-		const text = 'line 1line 2';
+		const text = `line 1
+line 2`;
 
 		// Don't make changes below this line	
 		
@@ -373,17 +384,17 @@ try {
 		
 		solvedBonus++;
 	})();
-	*/
+	
 
   /// Arrow functions (bonus) ///
 
-  /*
+  
 	(function UseArrow3() {
 		// Rewrite all functions as arrow functions. Use as minimal syntax as possible.
-		let one = function () { return 1; };
-		let two = function (x) { return x + x; };
-		let three = function (x, y) { return x + y; };
-		let four = function (x, y) {
+		let one = () => 1;
+		let two = x => x + x;
+		let three = (x, y) => x + y;
+		let four = (x, y) => {
 			let result = 0;
 			for (let i = x; i < y; i++)
 				result += i;
@@ -399,11 +410,11 @@ try {
 		
 		solvedBonus++;
 	})();
-	*/
+	
 
   /// Destructuring (bonus) ///
 
-  /*
+  
 	(function UseObjectDestructuring2() {
 		let obj = {
 			name: 'Oslo',
@@ -412,9 +423,8 @@ try {
 		}
 		
 		// Use object destructuring to change the 3 statements below into 1 statement.
-		let a = obj.name;
-		let b = obj.age;
-		let c = obj.add;
+
+		let {name:a, age:b, add:c} = obj;
 
 		// Don't make changes below this line	
 		
@@ -424,14 +434,13 @@ try {
 		
 		solvedBonus++;
 	})();
-	*/
-
-  /*
+	 
+  
 	(function UseFailSoftDestructuring() {
 		const arr = [1, 2];
 		
     // change the left side (before =) below to let the tests succeed.
-		let [a, b] = arr;
+		let [a, b, c = 3, d] = arr;
 
 		// Don't make changes below this line	
 		
@@ -442,9 +451,9 @@ try {
 
 		solvedBonus++;
 	})();
-	*/
+	
 
-  /*
+  
 	(function UseNestedDestructuring() {
 		let obj = {
 			add: (x, y) => x + y,
@@ -453,9 +462,10 @@ try {
 			};
 		
 		// Use destructuring to change the 3 statements below into 1 statement.
-		let a = obj.add;
-		let b = obj.city.name;
-		let c = obj.arr.slice(1);
+		//let a = obj.add;
+		//let b = obj.city.name;
+		//let c = obj.arr.slice(1);
+		let {add:a, city : {name:b}, arr:[, ...c]} = obj;
 
 		// Don't make changes below this line	
 		
@@ -465,15 +475,15 @@ try {
 		
 		solvedBonus++;
 	})();
-	*/
+	
 
-  /*
+  
   (function UseDestructuring() {
     const arr = [1, 2, 3, 4];
 
     // Use spread & destructuring in the following 2 lines to move the first entry to the last.
-    const [first, rest] = arr;
-    const newArr = [rest, first];
+    const [first, ...rest] = arr;
+    const newArr = [...rest, first];
 
     // Don't make changes below this line
 
@@ -481,21 +491,20 @@ try {
 
     solvedBonus++;
 	})();
-	*/
+	
 
   /// Iterable (bonus) ///
 
-  /*
+  
 	(function UseGeneratorFunction() {
 		// Rewrite the function below to be a generator function ("function*" and "yield").
-		function range(start, end) {
-			let list = [];
-			while (start < end) {
-				list.push(start);
+
+		function* range(start, end) {
+			while (start < end){
+				yield start;
 				start++;
 			}
-			return list;
-		}	
+		}
 
 		// Don't make changes below this line	
 
@@ -508,7 +517,7 @@ try {
 
 		solvedBonus++;
 	})();
-	*/
+	
 
   if (solved === toSolve) {
     console.log(`
