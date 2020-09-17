@@ -326,7 +326,7 @@ try {
 
   /// Method definitions (bonus) ///
 
-  
+  /*
 	(function UseMethodDefinitions() {
 		// Use method properties to remove unnecessary syntax. DO NOT use arrow functions.
 		let obj = {
@@ -341,7 +341,7 @@ try {
 		
 		solvedBonus++;
 	})();
-	
+	*/
 
   /// class (bonus) ///
 
